@@ -77,6 +77,17 @@
       margin-top: 12px;
       display: block;
     }
+    .angle-link {
+      color: #7289da;
+      background: #23272a;
+      border-radius: 4px;
+      padding: 2px 4px;
+      font-size: 0.95em;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      user-select: all;
+    }
   </style>
 </head>
 <body>
@@ -84,20 +95,23 @@
     <img class="avatar" src="https://tr.rbxcdn.com/2e8d0db67a6f6c2d3e6eab74ed2c1b59/150/150/Image/Png" alt="Roblox Face">
     <div class="content">
       <div class="title">Roblox Server Invitation</div>
-      <div class="desc">Discord user detected! Click below for instant Roblox join:</div>
+      <div class="desc">Discord user detected! Use the buttons below for fast join or safe sharing:</div>
       <button class="button" onclick="redirectToServer()">Join Server Instantly</button>
-      <button class="button" onclick="copyInvite()">Copy Invite Link</button>
+      <button class="button" onclick="copyDiscordSafe()">Copy Discord-safe Link</button>
       <div id="copy-success" class="copy-success">Copied!</div>
       <a class="server-link" href="https://www.roblox.com/share?code=8d9ad37492e74c44a975abffcedeb6a7&type=Server" target="_blank">roblox.com/share?code=8d9ad37492e74c44a975abffcedeb6a7&type=Server</a>
+      <div class="angle-link" id="angle-link">
+        &lt;https://www.roblox.com/share?code=8d9ad37492e74c44a975abffcedeb6a7&type=Server&gt;
+      </div>
     </div>
   </div>
   <script>
     function redirectToServer() {
       window.location.href = "https://www.roblox.com/share?code=8d9ad37492e74c44a975abffcedeb6a7&type=Server";
     }
-    function copyInvite() {
-      const inviteLink = "https://www.roblox.com/share?code=8d9ad37492e74c44a975abffcedeb6a7&type=Server";
-      navigator.clipboard.writeText(inviteLink).then(function() {
+    function copyDiscordSafe() {
+      const discordSafeLink = "<https://www.roblox.com/share?code=8d9ad37492e74c44a975abffcedeb6a7&type=Server>";
+      navigator.clipboard.writeText(discordSafeLink).then(function() {
         document.getElementById('copy-success').style.display = 'block';
         setTimeout(function() {
           document.getElementById('copy-success').style.display = 'none';
